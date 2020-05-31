@@ -16,6 +16,7 @@ namespace CourseWork_att_1
         private Users users = new Users();
         public login_form()
         {
+            
             InitializeComponent();
             users.Load();
             this.password_field.Size = new Size(this.password_field.Size.Width, 80);

@@ -17,7 +17,7 @@ namespace CourseWork_att_1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new  Store_window());
+            Application.Run(new  login_form());
         }
     }
 }
