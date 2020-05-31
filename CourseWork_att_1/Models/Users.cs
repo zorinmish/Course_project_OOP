@@ -72,8 +72,8 @@ namespace CourseWork_att_1.Models
         }
         public void Load()
         {
-            Admins = new List<Admin>();
-            Chefs = new List<Chef>();
+            if (Admins == null) Admins = new List<Admin>();
+            if (Chefs == null) Chefs = new List<Chef>();
 
             LoadAdmins();
             LoadChefs();

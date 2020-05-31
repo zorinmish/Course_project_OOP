@@ -5,10 +5,41 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace CourseWork_att_1.Models
 {
     public class Book_of_recipes
     {
+        public Recipe FindBest(Store store)
+        {
+            foreach (var recipe in Recipes)
+            {
+                int result = 0;
+                foreach(var por in recipe.Products)
+                {
+                    if (store.st_exist(por)) result++;
+                }
+                if (result == recipe.Products.Count) return recipe;
+
+            }
+            return null;
+        }
+        public List<Recipe> FindLot(Store store)
+        {
+            List<Recipe> result = new List<Recipe>();
+            foreach (var recipe in Recipes)
+            {
+                int res = 0;
+                foreach (var por in recipe.Products)
+                {
+                    if (store.st_exist(por)) res++;
+                }
+                if (res == recipe.Products.Count) result.Add(recipe);
+
+            }
+            if (result.Count == 0) return null;
+            else return result;
+        }
         public Book_of_recipes()
         {
             Products = new List<Product>();

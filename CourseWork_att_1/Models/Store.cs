@@ -25,6 +25,15 @@ namespace CourseWork_att_1.Models
             Orders = new List<Order>();
             Supplies = new List<Supply>();
         }
+        
+        public bool st_exist(Portion por)
+        {
+            foreach (var po in Portions)
+            {
+                if (po == por) return true;
+            }
+            return false;
+        }
         public void FillTestData(int n)
         {
             Products = new List<Product>();

@@ -17,8 +17,7 @@ namespace CourseWork_att_1
         public Book_of_recipes_window()
         {
             InitializeComponent();
-            book.FillTestData(100);
-            book.Save();
+            book.Load();
             recipeBindingSource.DataSource = book.Recipes;
 
         }
@@ -39,7 +38,9 @@ namespace CourseWork_att_1
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
+            Main_chef ch = new Main_chef();
+            ch.Show();
         }
 
         private void loadToolStripMenuItem_Click(object sender, EventArgs e)
